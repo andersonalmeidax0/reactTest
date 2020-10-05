@@ -15,27 +15,35 @@ export  class NativeSample extends Component {
           return {count: this.state.count + 1};
       });
   }
-  handleChangeText(t) {
+  handleChangeText  = (t) =>   {
+    this.setState({text:t});
+  }
+  handleChangeTextState  = (t) =>   {
+    this.setState({text:"######"});
+  }
+  handleChangeTextProps  = (t) =>   {
     this.setState({text:t});
   }
 
  render() {
   return (
    <View style={{margin:50}}>
-    <Text style={{padding: 10, fontSize: 30}}>TestApp v1.4</Text>
-    <Button title="SetState" onPress={this.handleClick}  color = "red" />
-    <Text style={{ height: 40,  borderWidth: 0, fontSize: 30 }}>CountValue:</Text>
-    <Text style={{ height: 40,  borderWidth: 0, fontSize: 30 }}>{this.state.count}</Text>
-    <TextInput style={{height: 40}} placeholder="Type your text!" 
+    <Text style={{padding: 10, fontSize: 16}}>TestApp v1.5</Text>
+    <Button title="SetCounterState" onPress={this.handleClick}  color = "red" />
+    <Text style={{ height: 20,  borderWidth: 0, fontSize: 16 }}>CountValue:</Text>
+    <Text style={{ height: 20,  borderWidth: 0, fontSize: 16 }}>{this.state.count}</Text>
+    <TextInput style={{height: 32, borderWidth: 2}} placeholder="Type your text!" 
     onChangeText={(firstVar) => this.setState({firstVar})}   />
-    
-    <TextInput style={{height: 40,borderColor: 'gray', borderWidth: 1}} placeholder="Initial TEXT"
+
+    <TextInput style={{height: 32,borderColor: 'gray', borderWidth: 2}} placeholder="Initial TEXT"
           onChangeText={(t) => this.setState({text:t})} value={this.state.text} 
       />
+
       
-    <Text style={{padding: 10, fontSize: 42}}>  {this.state.firstVar}  </Text>
-    <Button title="Change Text State" onPress={this.handleClick}  color = "red" />
-    <Button title="Change Text Props" onPress={this.handleClick}  color = "red" />
+    <Text style={{padding: 10, fontSize: 16}}>  {this.state.firstVar}  </Text>
+    <Text style={{padding: 10, fontSize: 16}}>  {this.state.text}  </Text>
+    <Button title="Change Text State" onPress={this.handleChangeTextState}  color = "red" />
+    <Button title="Change Text Props" onPress={this.handleChangeTextProps}  color = "red" />
    </View>
    );
  }
