@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {  AppRegistry, StyleSheet, Text, TextInput, View, Button} from 'react-native';
 
+//https://habiletechnologies.com/blog/understanding-the-basic-components-of-react-native/
+//funcionou em andoir e IOS
+
 export  class NativeSample extends Component {
  constructor(props) {
      super(props)
@@ -22,7 +25,6 @@ export  class NativeSample extends Component {
     this.setState({text:"New value"});
   }
   handleChangeTextProps  = (t) =>   {
-    //this.setState({text:t});
     if(this.state.textColor=='blue')
       this.setState({textColor:'red'});
     else  
